@@ -1,52 +1,34 @@
 # META RECOVERY
 
-A premium recovery education and support platform built with React, TypeScript, Tailwind, and Supabase-ready authentication.
+An independent educational resource with practical, privacy-conscious guidance for account recovery and digital safety. This project is not affiliated with or endorsed by Meta or any other social platform.
 
-## Features
+## What works
 
-- Public marketing website and pricing page
-- Registration, login, and password reset flows
-- Premium checkout flow with env-based safeguards
-- User dashboard with module access and payment status
-- Admin dashboard with role-protected routing
-- 10 educational modules and 40+ recovery scenarios
-- Secure, server-side design guidance for Supabase and payment providers
+- Responsive, accessible landing page with recovery and account-security guidance.
+- Searchable guide cards, expandable FAQs, and an interactive safety checklist.
+- Links users to the official Meta Help Center rather than collecting account credentials.
+- No account login, password collection, payment processing, or backend is configured.
 
-## Stack
+## Run locally
 
-- React + TypeScript + Vite
-- Tailwind CSS
-- Supabase Auth client
-- Lucide icons
-- React Router
+Requires Node.js 18 or later.
 
-## Local setup
+```bash
+npm install
+npm run dev
+```
 
-1. Install dependencies:
-   npm install
-2. Copy the environment file:
-   cp .env.example .env
-3. Fill in Supabase and payment provider values if available.
-4. Run the app:
-   npm run dev
+Open the local URL printed by Vite. To verify a production build:
 
-## Production deployment
+```bash
+npm run build
+npm run preview
+```
 
-- Deploy to Vercel or any Node-compatible host.
-- Add the same environment variables in the deployment environment.
-- Configure a real Supabase project and Stripe/PayPal webhooks for a live checkout flow.
+## Deployment
 
-## Payment and security notes
+Build with `npm run build` and deploy the generated `dist/` directory to a static hosting provider. Configure the provider to serve `index.html` for the root route.
 
-- The app will not claim a successful payment without verified provider credentials.
-- Premium access remains locked until real payment verification is completed by the backend provider.
-- Secret keys must remain on the server and never be exposed in client code.
+## Security
 
-## Admin access in demo mode
-
-A demo admin user is available locally in setup mode using:
-
-- Email: admin@metarecovery.test
-- Password: demo1234
-
-This is not a real production credential and should be replaced by a real Supabase admin setup.
+This website does not recover accounts and should never ask users for passwords, one-time sign-in codes, backup codes, or password-reset links. Use official provider websites and apps for account recovery. Do not put secret keys in browser environment variables; any future payment or privileged integrations must be implemented and verified on a trusted server.
